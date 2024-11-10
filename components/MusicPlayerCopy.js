@@ -38,8 +38,35 @@ const MusicPlayer = () => {
   const scrollX = useRef(new Animated.Value(0)).current;
   const [songIndex, setSongIndex] = useState(0);
   const [expectedState, setExpectedState] = useState(State.Paused); // Track expected play/pause state
-
+  const [repeatMode, setRepeatMode] = useState("off");
   const songSlider = useRef(null);
+
+  const repeatIcon = () => {
+    if (repeatMode == "off") {
+      return "repeat-off";
+    }
+    if (repeatMode == "track") {
+      return "repeat-once";
+    }
+    if (repeatMode == "repeat") {
+      return "repeat";
+    }
+  };
+
+  const changeRepeatMode = () => {
+    if (repeatMode == "off") {
+      TrackPlayer.setRepeatMode(RepeatMode.Track);
+      setRepeatMode("track");
+    }
+    if (repeatMode == "track") {
+      TrackPlayer.setRepeatMode(RepeatMode.Queue);
+      setRepeatMode("repeat");
+    }
+    if (repeatMode == "repeat") {
+      TrackPlayer.setRepeatMode(RepeatMode.Off);
+      setRepeatMode("off");
+    }
+  };
 
   const skipTo = async (trackId) => {
     await TrackPlayer.skip(trackId);
@@ -190,8 +217,12 @@ const MusicPlayer = () => {
           <TouchableOpacity onPress={() => {}}>
             <Ionicons name="heart-outline" size={30} color="#777777" />
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => {}}>
-            <MaterialCommunityIcons name="repeat" size={30} color="#777777" />
+          <TouchableOpacity onPress={changeRepeatMode}>
+            <MaterialCommunityIcons
+              name={`${repeatIcon()}`}
+              size={30}
+              color={repeatMode !== "off" ? "#FFD369" : "#777777"}
+            />
           </TouchableOpacity>
           <TouchableOpacity onPress={() => {}}>
             <Ionicons name="share-outline" size={30} color="#777777" />

@@ -21,6 +21,7 @@ import TrackPlayer, {
   useProgress,
   useTrackPlayerEvents,
 } from "react-native-track-player";
+import { updateOptions } from "react-native-track-player/lib/src/trackPlayer";
 
 const { width } = Dimensions.get("window");
 
@@ -29,6 +30,18 @@ const setupPlayer = async () => {
   if (isSetup) return;
 
   await TrackPlayer.setupPlayer();
+
+  // await TrackPlayer.updateOptions({
+  //   capabilities: [
+  //     Capability.Play,
+  //     Capability.Pause,
+  //     Capability.SkipToNext,
+  //     Capability.SkipToPrevious,
+  //     Capability.Stop,
+  //   ],
+  // });
+
+  
   await TrackPlayer.add(songs);
   await TrackPlayer.setRepeatMode(RepeatMode.Off);
 };
