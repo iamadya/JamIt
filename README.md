@@ -15,27 +15,33 @@
 ## **Getting Started**
 
 1. **Clone the repository**:
+   
    ```bash
    git clone https://github.com/iamadya/JamIt.git
    cd JamIt
    
 2. **Install dependencies**:
+   
    ```bash
    npm install
    
 3. **Start the development server**:
+ 
     ```bash
     npm start
     
 4. **Run on Android**:
+   
    ```bash
    npm run android
 
 5. **Run on IOS**:
+    
    ```bash
    npm run ios
 
 ## **Usage**
+
 1. **Playback Controls**: Use the play/pause button, as well as next and previous buttons, to control playback.
 2. **Repeat Modes**: Tap the repeat icon to toggle between "off," "repeat track," and "repeat all" modes.
 3. **Seek Through Track**: Drag the progress slider to navigate to a specific point in the track.
@@ -43,11 +49,13 @@
 5. **Interactive Options**: Use like, share, and other buttons for an enhanced interactive experience.
 
 ## **Dependencies**
+
 - React Native: Framework for mobile development.
 - react-native-track-player: Handles audio playback.
 - @react-native-community/slider: Provides the track progress slider.
 
 ## **Project Structure**
+
 JamIt/
 ├── model/
 │   └── data.js               # Sample data for the playlist
@@ -57,8 +65,10 @@ JamIt/
 └── App.js                    # Entry point
 
 ## **Contributing**
+
 Contributions are welcome! Please fork the repository and create a pull request.
 
 ## **License**
+
 This project is licensed under the MIT License.
 
