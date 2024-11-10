@@ -65,6 +65,7 @@ JamIt/
 │       └── MusicPlayer.js    # Main music player component with UI and logic
 ├── App.js                    # Entry point of the application
 └── package.json              # Project metadata and dependencies
+```
 
 ## **Contributing**
 
