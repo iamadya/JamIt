@@ -56,13 +56,15 @@
 
 ## **Project Structure**
 
+```plaintext
 JamIt/
 ├── model/
-│   └── data.js               # Sample data for the playlist
+│   └── data.js               # Sample data for the playlist (song titles, artists, etc.)
 ├── src/
 │   └── components/
-│       └── MusicPlayer.js    # Main music player component
-└── App.js                    # Entry point
+│       └── MusicPlayer.js    # Main music player component with UI and logic
+├── App.js                    # Entry point of the application
+└── package.json              # Project metadata and dependencies
 
 ## **Contributing**
 
